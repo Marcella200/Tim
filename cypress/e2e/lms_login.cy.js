@@ -10,3 +10,4 @@ describe('Authentication Test', () =>
     cy.contains('Dashboard').should('be.visible');
     cy.contains(/hesgiag@gmail\.com/i).should('be.visible');
   });
+  
