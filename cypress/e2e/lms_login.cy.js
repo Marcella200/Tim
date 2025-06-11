@@ -60,7 +60,7 @@ describe('Authentication Test', () => {
 
     it('TC-LOGIN-07: Admin login dengan password tidak tepat', () => {
     cy.visit('https://lms.teknologidigital.co.id/login');
-    cy.get('input[placeholder="Alamat Email"]').type('hesgiag@gmai.com');
+    cy.get('input[placeholder="Alamat Email"]').type('hesgiag@gmail.com');
     cy.get('input[placeholder="Kata Sandi"]').type('passwo01');
     cy.get('button[type="submit"]').click();
     cy.contains('Email atau Kata Sandi Tidak Sesuai.').should('be.visible');
@@ -76,7 +76,7 @@ describe('Authentication Test', () => {
 
     it('TC-LOGIN-09: Admin login dengan serangan injeksi pada field password', () => {
     cy.visit('https://lms.teknologidigital.co.id/login');
-    cy.get('input[placeholder="Alamat Email"]').type('hesgiag@gmai.com');
+    cy.get('input[placeholder="Alamat Email"]').type('hesgiag@gmail.com');
     cy.get('input[placeholder="Kata Sandi"]').type(" OR '1'='1 ");
     cy.get('button[type="submit"]').click();
     cy.contains('Email atau Kata Sandi Tidak Sesuai').should('be.visible');
@@ -108,7 +108,7 @@ describe('Authentication Test', () => {
 
     it('TC-LOGIN-13: Admin login dengan serangan XSS pada field Password (JavaScript)', () => {
     cy.visit('https://lms.teknologidigital.co.id/login');
-    cy.get('input[placeholder="Alamat Email"]').type('hesgiag@gmai.com');
+    cy.get('input[placeholder="Alamat Email"]').type('hesgiag@gmail.com');
     cy.get('input[placeholder="Kata Sandi"]').type('<img src=x onerror=alert(1)>');
     cy.get('button[type="submit"]').click();
     cy.contains('Email atau Kata Sandi Tidak Sesuai').should('be.visible');
