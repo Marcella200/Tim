@@ -1,4 +1,4 @@
-describe('Authentication Test', () => {
+describe('Halaman Dashboard', () => {
   beforeEach(() => {
     cy.visit('https://lms.teknologidigital.co.id/login')
     cy.get('input[placeholder="Alamat Email"]').type('hesgiag@gmail.com');
